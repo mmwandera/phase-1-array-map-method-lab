@@ -11,6 +11,11 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+// We want all the titles to be "title case", in other words, the first letter of each word should be capitalized. Create a new array containing the names of the tutorials with proper title case formatting. For example, 'what does the this keyword mean?' should become 'What Does The This Keyword Mean?'.
+function titleCased(){
+  return tutorials.map(tutorial => {
+    return tutorial.split(' ').map(item => {
+      return item.charAt(0).toUpperCase() + item.slice(1)
+    }).join(' ')
+  })
 }
